@@ -1,0 +1,165 @@
+body {
+	background-color: #dfdfdf;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 0;
+	-webkit-transition: background-color .4s ease-out;
+	-moz-transition: background-color .4s ease-out;
+}
+
+body.searching {
+	background-color: #636363;
+}
+
+.inspector {
+	position: absolute;
+	background-color: white;
+	color: #444;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px #999;
+}
+
+.inspector > .title {
+	padding: 10px 10px 0;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.inspector > .content {
+	font-size: 13px;
+	padding: 10px;
+}
+
+
+
+
+#dummy {
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	width: 300px;
+	height: 300px;
+	background-image: url(canary.jpg);
+	background-repeat: repeat;
+	background-size: 299px 299px;
+	-webkit-transition:
+		-webkit-transform .4s ease-out,
+		background-position .4s ease-out,
+		opacity .3s ease-out;
+	-moz-transition:
+		background-position .4s ease-out,
+		opacity .3s ease-out;
+}
+
+body.searching #dummy {
+	opacity: 0;
+	-webkit-transform: scale(0) !important;
+}
+
+@-webkit-keyframes dummy-slide-right {
+	from 	{ background-position: 0px 0px; }
+	to	 	{ background-position: 299px 0px; }
+}
+
+@-webkit-keyframes dummy-slide-left {
+	from 	{ background-position: 0px 0px; }
+	to	 	{ background-position: -299px 0px; }
+}
+
+
+#search {
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -40px;
+	width: 260px;
+	height: 24px;
+	padding: 20px;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	-webkit-transition:
+		-webkit-transform .4s ease-out,
+		opacity .3s ease-out;
+	pointer-events: none;
+}
+
+#search > input {
+	width: 260px;
+}
+
+body.searching #search {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	pointer-events: auto;
+}
+
+
+
+#gestures {
+	width: 200px;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+}
+
+#gestures ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#gestures ul li:first-child {
+	font-weight: bold;
+}
+
+#gestures ul li {
+	margin-top: 5px;
+	-webkit-animation: fade-out 5s ease-out;
+	-moz-animation: fade-out 5s ease-out;
+}
+
+@-webkit-keyframes fade-out {
+	from 	{ opacity: 1; }
+	to	 	{ opacity: 0; }
+}
+
+@-moz-keyframes fade-out {
+	from 	{ opacity: 1; }
+	to	 	{ opacity: 0; }
+}
+
+
+
+#hands {
+	left: 50%;
+	top: 10px;
+	z-index: 20;
+	width: 200px;
+	margin-left: -100px;
+}
+
+#hands .content > div {
+	display: inline-block;
+	width: 85px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#hands .content > .hands::before {
+	content: "Hands";
+}
+
+#hands .content > .fingers::before {
+	content: "Fingers";
+}
+
+#hands .content > div::before {
+	display: block;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #999;
+	font-size: 10px;
+}
